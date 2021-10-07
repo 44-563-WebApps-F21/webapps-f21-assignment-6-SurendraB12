@@ -19,10 +19,35 @@
                 alert("access denied");
             }
         }
+        var usingImage = 1;
+        function newImage() {
+
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("imgClickAndChange").src = "BAR.jpg";
+                    usingImage = 1;
+                    break;
+                case 1:
+                    document.getElementById("imgClickAndChange").src = "DOG.jpg";
+                    usingImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("imgClickAndChange").src = "OX.jpg";
+                    usingImage = 0;
+                    break;
+                default:
+                    document.getElementById("imgClickAndChange").src = "BAR.jpg";
+            }
+        }
+
     </script>
    </head>>  
 <body>
 <h2>Pass phrase by Surendra Boddapati</h2>
+<div class="container">
+    <h3> Animals Image</h3>
+<img src="BAR.jpg" onClick="newImage()" id="imgClickAndChange" alt="Elephant" width="200" height="200">
+</div>
 <form>
     <label for="secretphrase">Enter the secret phrase </label>
     <input type="password" id="secretphrase" name="secretphrase" value="Let me in"> <br>
